@@ -4,7 +4,11 @@ import org.junit.Test;
 
 public class LCA_test {
 
-	
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
 }
 
 
