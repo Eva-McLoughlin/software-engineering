@@ -2,7 +2,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class LCATest {
+public class LCA_test {
 
 	@Test
 	public void testLCA() {

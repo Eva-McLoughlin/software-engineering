@@ -284,11 +284,19 @@ public class LCA <Key extends Comparable<Key>, Value>{
 	   }
 	
 	// Used: www.geeksforgeeks.org/lowest-common-ancestor-in-a-binary-search-tree as a help source.
-	 	public Node LowestCommonAncestor (Node node, Key key1, Key key2){
+	 	public Node lowestCommonAncestor (Node node, Key key1, Key key2){
 	 		if (node == null)
 	             return null;
-			return node;
+	 		int cmp1 = node.key.compareTo(key1);
+	 		int cmp2 = node.key.compareTo(key2);
 	 		
+	         if (cmp1 >= 0 && cmp2 >= 0)
+	             return lowestCommonAncestor(node.left, key1, key2);
+	   
+	         if (cmp1 <= 0 && cmp2 <= 0)
+	             return lowestCommonAncestor(node.right, key1, key2);
+	   
+	         return node;
 	 	}
 	
 }
