@@ -6,18 +6,18 @@ public class LCA_test {
 
 	@Test
 	public void testLCA() {
-		LCA<Integer, Integer> LCA = new LCA<Integer, Integer>();
-		LCA.put(7, 7);   //        _7_
-		LCA.put(8, 8);   //      /     \
-		LCA.put(3, 3);   //    _3_      8
-		LCA.put(1, 1);   //  /     \
-		LCA.put(2, 2);   // 1       6
-		LCA.put(6, 6);   //  \     /
-		LCA.put(4, 4);   //   2   4
-		LCA.put(5, 5);   //        \
+		LCA<Integer, Integer> bst = new LCA<Integer, Integer>();
+		bst.put(7, 7);   //        _7_
+		bst.put(8, 8);   //      /     \
+		bst.put(3, 3);   //    _3_      8
+		bst.put(1, 1);   //  /     \
+		bst.put(2, 2);   // 1       6
+		bst.put(6, 6);   //  \     /
+		bst.put(4, 4);   //   2   4
+		bst.put(5, 5);   //        \
 		//        				 	5
-		assertEquals("Testing LCA left side", 3, LCA.LowestCommonAncestor(2,6).toString());
-		assertEquals("Testing LCA right side", 7, LCA.LowestCommonAncestor(8,3).toString());
+		assertEquals("Testing LCA left side", 3, bst.lowestCommonAncestor(bst.root, 2,6).toString());
+		assertEquals("Testing LCA right side", 7, bst.lowestCommonAncestor(bst.root, 8,3).toString());
 	}
 
 

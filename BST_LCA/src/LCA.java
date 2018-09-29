@@ -1,9 +1,9 @@
 public class LCA <Key extends Comparable<Key>, Value>{
 
 
-	private Node root;             				
+	Node root;             				
 
-	private class Node {
+	class Node {
 		private Key key;           				
 		private Value val;         				
 		private Node left, right; 				
