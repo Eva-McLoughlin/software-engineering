@@ -1,4 +1,3 @@
-
 public class LCA <Key extends Comparable<Key>, Value>{
 
 
@@ -283,4 +282,13 @@ public class LCA <Key extends Comparable<Key>, Value>{
 	     }
 	     return node;
 	   }
+	
+	// Used: www.geeksforgeeks.org/lowest-common-ancestor-in-a-binary-search-tree as a help source.
+	 	public Node LowestCommonAncestor (Node node, Key key1, Key key2){
+	 		if (node == null)
+	             return null;
+			return node;
+	 		
+	 	}
+	
 }
