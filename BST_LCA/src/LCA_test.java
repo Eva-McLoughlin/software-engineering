@@ -20,8 +20,8 @@ public class LCA_test {
 		bst.put(4, 4);   //   2   4
 		bst.put(5, 5);   //        \
 		//        				 	5
-		assertEquals("Testing LCA left side", 3, bst.lowestCommonAncestor(bst.root, 2,6).toString());
-		assertEquals("Testing LCA right side", 7, bst.lowestCommonAncestor(bst.root, 8,3).toString());
+		assertSame("Testing LCA left side", 3, bst.lowestCommonAncestor(bst.root, 2,6));
+		assertSame("Testing LCA right side", 7, bst.lowestCommonAncestor(bst.root, 8,3));
 		assertSame("Testing LCA where LCA is one of the nodes", 7, bst.lowestCommonAncestor(bst.root, 7,8));
 	}
 
