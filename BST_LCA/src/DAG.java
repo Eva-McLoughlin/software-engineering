@@ -37,4 +37,17 @@ public class DAG <Value> {
 			}
 			return valInList;
 		}
+		
+		
+		// Given a value will return the relevent node
+		public Node retrieveNodefromVal (Value v){
+			Node nodeToRet = new Node(null); 				
+			for (int i=0; i<nodeList.length; i++){
+				if (nodeList[i].val == v){
+					nodeToRet = nodeList[i];
+					break;			
+				}	
+			}
+			return nodeToRet;
+		}
 }
