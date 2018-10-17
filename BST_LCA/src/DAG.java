@@ -25,4 +25,16 @@ public class DAG <Value> {
 		// TODO Auto-generated method stub
 		return nodeList.length;  //returns the number of nodes
 	}
+	
+	// Method to check if node n is in the graph
+		public boolean contains(Value v) {
+			boolean valInList = false;
+			for (int i=0; i<nodeList.length; i++) {
+				if (nodeList[i].val == v) {
+					valInList = true;
+					break;
+				}			
+			}
+			return valInList;
+		}
 }
