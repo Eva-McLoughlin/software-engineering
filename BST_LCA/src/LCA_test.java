@@ -198,6 +198,8 @@ public class LCA_test {
 		LCA.put(7, 7); 
 		assertEquals("Testing contains", true, LCA.contains(7));
 	}
+	
+	
 
 
 }
