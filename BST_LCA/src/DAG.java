@@ -50,4 +50,62 @@ public class DAG <Value> {
 			}
 			return nodeToRet;
 		}
+		
+		public void put(Value v, Value fromVal, Value toVal) {	
+			Node n = new Node(v);
+			Node from = retrieveNodefromVal(fromVal);
+			Node to = retrieveNodefromVal(toVal);
+
+			if (fromVal != null) {
+				from.successors = extendArray(from.successors); //need a method to extend array
+				from.successors[from.successors.length-1] = n;
+				if (from.val == null) {
+					addNodeToNodeList(from); 
+				}
+			}
+			if (toVal != null) {
+				n.successors = extendArray(n.successors);
+				n.successors[n.successors.length-1] = to;
+				if (to.val == null) {
+					addNodeToNodeList(to);
+				}
+			}
+			addNodeToNodeList(n);	
+			
+		}
+		public void deleteNode(Node n) {
+			int i;
+			for(i=0; i<n.successors.length; i++) {
+				n.successors[i] = null;
+			}
+			
+			for(i=0; i<nodeList.length; i++) {
+				if (Arrays.asList(nodeList[i].successors).contains(n) == true) {
+					for (int j=0; j<nodeList[i].successors.length; j++) {
+						if (nodeList[i].successors[j] == n) {
+							nodeList[i].successors[j] = null;
+						}
+					}
+				}
+			}
+			for (int k=0; k<nodeList.length; k++) {
+				if (nodeList[k] == n) {
+					nodeList[k] = null;
+				}
+			}		
+		}
+		
+		public void addNodeToNodeList (Node n) {
+			nodeList = extendArray(nodeList);
+			nodeList[nodeList.length-1] = n;
+		}
+		// Extend the array by one element
+			@SuppressWarnings("unchecked")
+			public Node[] extendArray(Node[] originalArray) {
+				Node[] copyArray = new DAG.Node[originalArray.length+1];
+				System.arraycopy(originalArray, 0, copyArray, 0, originalArray.length);
+				return copyArray;
+			}
+
+
 }
