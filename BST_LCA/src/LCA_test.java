@@ -4,6 +4,7 @@ import org.junit.Test;
 
 public class LCA_test {
 
+	
 	@Test
 	public void testLCA() {
 		
@@ -191,6 +192,8 @@ public class LCA_test {
 		LCA.put(7, 7); 
 		assertEquals("Testing contains", true, LCA.contains(7));
 	}
+	
+	// Source used: https://github.com/connold9/LCA/blob/master/LCATest.java
 
 
 }

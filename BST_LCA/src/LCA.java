@@ -16,21 +16,29 @@ public class LCA <Key extends Comparable<Key>, Value>{
 		}
 
 	}
+	
+	class DAG{
+		private Node root;
+		public DAG(Node root){
+			this.root = root;
+		}
+	}
+	
 	public boolean isEmpty() { 
 		return size() == 0; 
 	}
 
-	// return number of key-value pairs in BST
+
 	public int size() { 
 		return size(root); 
 	}
 
-	// return number of key-value pairs in BST rooted at x
+	// return the number of key-value pairs in BST which are rooted at x
 	private int size(Node x) {
-		//BST is empty
+		// if BST is empty
 		if (x == null) return 0;
 
-		//N is number of nodes
+		//N = #nodes
 		else return x.N;
 	}
 
@@ -304,5 +312,7 @@ public class LCA <Key extends Comparable<Key>, Value>{
 	   
 	         return node.key;
 	 	}
+	 	
+	 	// Source used: https://github.com/connold9/LCA/blob/master/LCA.java
 	
 }
