@@ -172,4 +172,14 @@ public class DAG {
 			else
 				return -1;
 		}
+	 
+	 public DAG reverse() {
+	        DAG reverse = new DAG(V); //new dag of same parameter
+	        for (int v = 0; v < V; v++) {
+	            for (int w : adj(v)) {
+	                reverse.addEdge(w, v); //reverse the direction of the edges
+	            }
+	        }
+	        return reverse;
+	    }
 }
