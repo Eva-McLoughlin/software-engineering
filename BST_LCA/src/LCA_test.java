@@ -4,12 +4,6 @@ import org.junit.Test;
 
 public class LCA_test {
 
-	@Test
-	public void testDAGLCA() {
-		
-		
-		// need to write tests here
-	}
 	
 	@Test
 	public void testLCA() {
