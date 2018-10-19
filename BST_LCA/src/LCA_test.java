@@ -193,7 +193,7 @@ public class LCA_test {
 		assertEquals("Testing contains", true, LCA.contains(7));
 	}
 	
-	
+	// Source used: https://github.com/connold9/LCA/blob/master/LCATest.java
 
 
 }

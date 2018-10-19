@@ -312,5 +312,7 @@ public class LCA <Key extends Comparable<Key>, Value>{
 	   
 	         return node.key;
 	 	}
+	 	
+	 	// Source used: https://github.com/connold9/LCA/blob/master/LCA.java
 	
 }

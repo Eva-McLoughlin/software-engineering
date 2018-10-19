@@ -154,15 +154,14 @@ public class DAG {
 				return -1;
 			}
 			DAG backwards = reverse();
-			ArrayList<Integer> arr1 = backwards.BFS(v);
-			ArrayList<Integer> arr2 = backwards.BFS(w);
+			ArrayList<Integer> vPath = backwards.BFS(v);
+			ArrayList<Integer> wPath = backwards.BFS(w);
 			ArrayList<Integer> commonAncestors = new ArrayList<Integer>();
 			boolean found = false;
-			for(int i = 0; i<arr1.size(); i++){
-					for(int t = 0; t<arr2.size(); t++){		
-						if(arr1.get(i)==arr2.get(t)){
-							commonAncestors.add(arr1.get(i));	
-							found = true;
+			for(int i = 0; i<vPath.size(); i++){
+				for(int t = 0; t<wPath.size(); t++){		
+					if(vPath.get(i)==wPath.get(t)){
+						commonAncestors.add(vPath.get(i));
 						}
 				}
 			}
@@ -182,4 +181,6 @@ public class DAG {
 	        }
 	        return reverse;
 	    }
+	 
+	 // Source used: https://github.com/connold9/LCA/blob/master/DAG.java
 }
